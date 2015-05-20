@@ -1,0 +1,108 @@
+## -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+# 
+# Copyright (c) 2011-2013, Regents of the University of California
+#                          Alexander Afanasyev
+# 
+# GNU 3.0 license, See the LICENSE file for more information
+# 
+# Author: Alexander Afanasyev <alexander.afanasyev@ucla.edu>
+# 
+
+def build(bld):
+    # This may be necessary for visualizer to work
+    all_modules = [mod[len("ns3-"):] for mod in bld.env['NS3_ENABLED_MODULES']]
+
+    obj = bld.create_ns3_program('ccn-simple', all_modules)
+    obj.source = 'ccn-simple.cc'
+
+    obj = bld.create_ns3_program('ccn-csma', all_modules)
+    obj.source = 'ccn-csma.cc'
+
+    obj = bld.create_ns3_program('ccn-grid', all_modules)
+    obj.source = 'ccn-grid.cc'
+
+    obj = bld.create_ns3_program('ccn-zipf-mandelbrot', all_modules)
+    obj.source = 'ccn-zipf-mandelbrot.cc'
+
+
+    obj = bld.create_ns3_program('ccn-simple-with-content-freshness', all_modules)
+    obj.source = ['ccn-simple-with-content-freshness.cc',
+                  'custom-apps/dumb-requester.cc']
+
+    obj = bld.create_ns3_program('ccn-simple-with-custom-app', all_modules)
+    obj.source = ['ccn-simple-with-custom-app.cc',
+                  'custom-apps/custom-app.cc',
+                  'custom-apps/hijacker.cc']
+
+    if 'topology' in bld.env['CCN_plugins']:
+        obj = bld.create_ns3_program('ccn-grid-topo-plugin', all_modules)
+        obj.source = 'ccn-grid-topo-plugin.cc'
+
+        obj = bld.create_ns3_program('ccn-grid-topo-plugin-loss', all_modules)
+        obj.source = 'ccn-grid-topo-plugin-loss.cc'
+
+        obj = bld.create_ns3_program('ccn-grid-topo-plugin-red-queues', all_modules)
+        obj.source = 'ccn-grid-topo-plugin-red-queues.cc'
+
+        obj = bld.create_ns3_program('ccn-congestion-topo-plugin', all_modules)
+        obj.source = 'ccn-congestion-topo-plugin.cc'
+
+        obj = bld.create_ns3_program('ccn-congestion-alt-topo-plugin', all_modules)
+        obj.source = [
+            'custom-strategies/custom-strategy.cc',
+            'ccn-congestion-alt-topo-plugin.cc'
+            ]
+
+        obj = bld.create_ns3_program('ccn-tree-tracers', all_modules)
+        obj.source = 'ccn-tree-tracers.cc'
+
+        obj = bld.create_ns3_program('ccn-tree-cs-tracers', all_modules)
+        obj.source = 'ccn-tree-cs-tracers.cc'
+
+        obj = bld.create_ns3_program('ccn-tree-app-delay-tracer', all_modules)
+        obj.source = 'ccn-tree-app-delay-tracer.cc'
+
+        obj = bld.create_ns3_program('ccn-tree-with-l2tracer', all_modules)
+        obj.source = 'ccn-tree-with-l2tracer.cc'
+
+        obj = bld.create_ns3_program('ccn-triangle-calculate-routes', all_modules)
+        obj.source = 'ccn-triangle-calculate-routes.cc'
+
+    obj = bld.create_ns3_program('ccn-simple-pit-policies', all_modules)
+    obj.source = 'ccn-simple-pit-policies.cc'
+
+    obj = bld.create_ns3_program('ccn-simple-with-different-sizes-content-store', all_modules)
+    obj.source = 'ccn-simple-with-different-sizes-content-store.cc'
+
+    obj = bld.create_ns3_program('ccn-simple-with-cs-lfu', all_modules)
+    obj.source = 'ccn-simple-with-cs-lfu.cc'
+
+    obj = bld.create_ns3_program('ccn-simple-with-pcap', all_modules)
+    obj.source = 'ccn-simple-with-pcap.cc'
+
+    obj = bld.create_ns3_program('ccn-simple-with-pit-operation-stats', all_modules)
+    obj.source = 'ccn-simple-with-pit-operation-stats.cc'
+
+    obj = bld.create_ns3_program('ccn-simple-with-pit-count-stats', all_modules)
+    obj.source = 'ccn-simple-with-pit-count-stats.cc'
+
+    obj = bld.create_ns3_program('ccn-simple-api', all_modules)
+    obj.source = [
+        'ccn-simple-api.cc',
+        'custom-apps/ccn-api-app.cc'
+        ]
+
+    obj = bld.create_ns3_program('ccn-simple-with-link-failure', all_modules)
+    obj.source = 'ccn-simple-with-link-failure.cc'
+
+    if 'ip-faces' in bld.env['CCN_plugins']:
+        obj = bld.create_ns3_program('ccn-simple-tcp', all_modules)
+        obj.source = 'ccn-simple-tcp.cc'
+
+        obj = bld.create_ns3_program('ccn-simple-udp', all_modules)
+        obj.source = 'ccn-simple-udp.cc'
+
+
+    if 'ns3-wifi' in bld.env['NS3_ENABLED_MODULES']:
+        obj = bld.create_ns3_program('ccn-simple-wifi', all_modules)
+        obj.source = 'ccn-simple-wifi.cc'

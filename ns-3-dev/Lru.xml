@@ -1,0 +1,6 @@
+# No ';' in names
+<UtilityCaching storage="default" insertBlock="default" actionBlockOrder="default" insertBlockNum="HD-CACHE" >
+  <Utility name="UTILITYBLOCK" maxsize="10" weight="default" typeName="RAM" >
+     <Utility name="LRU" scaling="fixed_increment" instance="1" alias="fixedLru" computePeriod="100ms" />
+  </Utility>
+</UtilityCaching>

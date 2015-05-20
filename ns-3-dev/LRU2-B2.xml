@@ -1,0 +1,7 @@
+<UtilityCaching implement="update" dataStorage="sql3" actionBlockOrderFn="default" actionBlockOrder="HD-CACHE;RAM-CACHE" >
+  #utilityBlock records stats (fn)
+  <UtilityBlock implement="update" name="HD-CACHE"  maxsize="20" writeTime="500ms" readTime="500ms" watermarkAction="<0.0001;purge" watermarkAction="<=0.3;moveDown[2]" watermarkAction=">=0.8;move[RAM-CACHE]" weight="0.3" watermarkAction=">0.9;copy[RAM-CACHE]" defaultAction="fillThenPurge" >
+  <UtilityBlock name="RAM-CACHE" maxsize="5" writeTime="0s" readTime="0s" watermarkAction=">0.8;moveDown[1]" weight="0.1">
+     <Utility name="NOP" instance="1" computePeriod="100ms" defaultValue="0.0" />
+  </UtilityBlock>
+</UtilityCaching>

@@ -1,0 +1,21 @@
+In ns-3/src/ccnSIM/model/wire/ccnx/ create a new TLV type.   Try to have an accurate name, showing where it can go, such as ccn-1.0_opt_tlv-cacheage.cc.   Notice I have opt (for optional) in the name.  
+a.   since its an integer, its an endian type.   Feel free to copy (change file name, class, etc) of an endian type, such as:
+ccn-1.0_content-msg-meta-opt-datatype
+ccn-1.0_content-msg-meta-opt-timestamp
+ccn-1.0_interesthop_tlv
+ccn-1.0_msg-name-nonce-endian.h
+etc.ccn-1.0_msg-name-nonce-endian
+
+Notice how ccn-1.0_interesthop_tlv uses 8bit data and ccn-1.0_msg-name-nonce-endian uses 64bit data (internally, we use the largest possible variable, 64bits).
+
+b.  Each only instantiates, via name, the appropriate name and variable size.  e.g. SetInterestHops(uint8_t) or GetTimestamp(uint64_t).   
+
+c.  add the new TLV type to ccn-1.0_tlv-id.h  ; Try to put in the enum type, the path name, e.g. INTEREST_OPT_MAZIARTLV (interest only, optional, maziar tlv).   This is the guideline I tried to implement in all TLV types.
+d.  add to ccn-1.0_tlv-helper-functions, your type from 1c.   Simply put, its 3 lines (including case/break statement).   This is the factory to create a TLV.
+e.  add appropriate support to ccn-1.0_tlv-helper-interest.   This code is your interface between the TLV world and the ccnsim/ccnxsim world.   This is where all your tlv manipulations occur.   In general, I 'try' to follow this format:
+(i) Get - Return a TLV.
+(ii) Set vs Add.   I 'try' to have a single copy (e.g. optional interest hops) as a 'set'.  There can only be one.   If there can be more than one, try to use the name 'add' (e.g. name_segments), which implies there can be a few.
+(iii) Delete.   Remove a tlv.   If you want to set, delete it first.  If the TLV is the 'add' type, it will delete ALL of them (e.g. name_segments).
+(iv) Exist.   Does the tlv exist.   Necessary for optional tlv.
+
+f.   Modify Interest class.  ALL ACCESS goes through the Interest/Data classes.     This is the abstraction used to manage/modify TLV's.

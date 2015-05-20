@@ -1,0 +1,5 @@
+<UtilityCaching>
+  <Utility name="UTILITYBLOCK" >
+    <Utility type="Constant" instance="1" value="0.0" />
+  </Utility>
+</UtilityCaching>

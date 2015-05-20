@@ -1,0 +1,5 @@
+<TLVFORMAT name="TLV_CONTENT" id="12288" type="container" endRangeId="12543">
+  <TLVFORMAT name="TLV_CACHECONT" id="5000"  endRangeId="5000" type="optContainer" >
+    <TLVFORMAT name="TLV_HTL" id="9000" endRangeId="9000" type="optEndValue" />    
+  </TLVFORMAT>
+</TLVFORMAT>

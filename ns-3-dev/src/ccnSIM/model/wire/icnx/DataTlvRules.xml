@@ -1,0 +1,33 @@
+<TLVFORMAT name="TLV_CONTENT" id="12288" type="container" endRangeId="12543">
+  <TLVFORMAT name="TLV_CACHETIME" id="17152" type="optEndValue" endRangeId="17152"/>
+  <TLVFORMAT name="TLV_FLOW" id="17162" type="optEndValue" endRangeId="17162"/>
+  <TLVFORMAT name="TLV_PAD" id="17163" type="optEndValue" endRangeId="17163"/>
+  <TLVFORMAT name="TLV_MESG" id="17161" type="container" endRangeId="17161">
+    <TLVFORMAT name="TLV_NAME" id="17164" type="container" endRangeId="17164">
+      <TLVFORMAT name="TLV_NAMESEG" id="17165" type="endValue" endRangeId="17165"/>
+      <TLVFORMAT name="TLV_IPID" id="17167" type="optEndValue" endRangeId="17167"/>
+      <TLVFORMAT name="TLV_APP" id="13056" type="optEndValue" endRangeId="17151"/>
+    </TLVFORMAT>
+    <TLVFORMAT name="TLV_PAYLDTYPE" id="17153" type="optEndValue" endRangeId="17153"/>
+    <TLVFORMAT name="TLV_PAYLOAD" id="17166" type="optEndValue" endRangeId="17166"/>
+    <TLVFORMAT name="TLV_EXPIRY" id="17154" type="optEndValue" endRangeId="17154"/>
+  </TLVFORMAT>
+  <TLVFORMAT name="TLV_VALIDATION_ALG" id="17168" type="optContainer" endRangeId="17168">
+    <TLVFORMAT name="TLV_CRC32" id="17170" type="optEndValue" endRangeId="17170"/>
+    <TLVFORMAT name="TLV_CRC32C" id="17171" type="optEndValue" endRangeId="17171"/>
+    <TLVFORMAT name="TLV_RFC793" id="17172" type="optEndValue" endRangeId="17172"/>
+    <TLVFORMAT name="TLV_HMAC_SHA256" id="17173" type="optEndValue" endRangeId="17173"/>
+    <TLVFORMAT name="TLV_VMAC128" id="17174" type="optEndValue" endRangeId="17174"/>
+    <TLVFORMAT name="TLV_RSA_SHA256" id="17175" type="optEndValue" endRangeId="17175"/>
+    <TLVFORMAT name="TLV_EC_SECP256K1" id="17176" type="optEndValue" endRangeId="17176"/>
+    <TLVFORMAT name="TLV_EC_SECP384R1" id="17177" type="optEndValue" endRangeId="17177"/>
+    <TLVFORMAT name="TLV_KEYID" id="17178" type="optEndValue" endRangeId="17178"/>
+    <TLVFORMAT name="TLV_PUBLICKEYLOC" id="17180" type="optEndValue" endRangeId="17180"/>
+    <TLVFORMAT name="TLV_PUBLICKEY" id="17179" type="optEndValue" endRangeId="17179"/>
+    <TLVFORMAT name="TLV_CERT" id="17181" type="optEndValue" endRangeId="17181"/>
+    <TLVFORMAT name="TLV_LINK" id="17182" type="optEndValue" endRangeId="17182"/>
+    <TLVFORMAT name="TLV_KEYNAME" id="17183" type="optEndValue" endRangeId="17183"/>
+    <TLVFORMAT name="TLV_SIGTIME" id="17184" type="optEndValue" endRangeId="17184"/>
+  </TLVFORMAT>
+  <TLVFORMAT name="ValPayload" id="17169" type="optEndValue" endRangeId="17169"/>
+</TLVFORMAT>

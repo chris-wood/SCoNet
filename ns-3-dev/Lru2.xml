@@ -1,0 +1,5 @@
+<UtilityCaching dataStorageFn="RAM" insertBlockFn="blah" actionBlockOrderFn="blah" packetActionFn="" >
+  <Utility name="UTILITYBLOCK" maxsize="10" writeTime="60ns" readTime="50ns" blockSizeBytes="8" typeName="Harddrive" >
+     <Utility name="LRU" scaling="relative_age" instance="1" computePeriod="insert" />
+  </Utility>
+</UtilityCaching>
