@@ -7,3 +7,4 @@ The tree will be trimmed shortly
 
 To run, disable examples and tests using waf.   Also, disable python.
 
+./waf configure --disable-tests --disable-examples --disable-python
