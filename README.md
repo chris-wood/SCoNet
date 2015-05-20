@@ -1,5 +1,6 @@
-# CCNX1-SIM
-CCNX 1.0 simulator
+# SCoNet
+(Simulator COntent NETworking)
+THis simulator is based upon ccnx 1.0 (ccnx.org)
 
 This archive is currently a bit of a mess.   It is heavily modified ndnSim (which only has a few ndn elements left) 
 based upon ns3.    Current checkin is the full tree for development.
